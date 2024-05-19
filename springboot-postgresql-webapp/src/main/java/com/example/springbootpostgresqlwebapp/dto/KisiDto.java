@@ -1,9 +1,5 @@
-package dto;
+package com.example.springbootpostgresqlwebapp.dto;
 
-import entity.Adres;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 import java.util.List;

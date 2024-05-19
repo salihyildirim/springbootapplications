@@ -1,10 +1,9 @@
-package entity;
+package com.example.springbootpostgresqlwebapp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.ArrayDeque;
 import java.util.List;
 
 @Entity

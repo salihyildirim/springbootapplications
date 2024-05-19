@@ -1,19 +1,19 @@
-package service.impl;
+package com.example.springbootpostgresqlwebapp.service.impl;
 
-import dto.KisiDto;
-import entity.Adres;
-import entity.Kisi;
+import com.example.springbootpostgresqlwebapp.dto.KisiDto;
+import com.example.springbootpostgresqlwebapp.entity.Adres;
+import com.example.springbootpostgresqlwebapp.entity.Kisi;
 import lombok.RequiredArgsConstructor;
-import mapper.KisiMapper;
+import com.example.springbootpostgresqlwebapp.mapper.KisiMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
-import repo.AdresRepository;
-import repo.KisiRepository;
-import service.KisiService;
+import com.example.springbootpostgresqlwebapp.repo.AdresRepository;
+import com.example.springbootpostgresqlwebapp.repo.KisiRepository;
+import com.example.springbootpostgresqlwebapp.service.KisiService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +24,12 @@ public class KisiServiceImpl implements KisiService {
 
     private final KisiRepository kisiRepository;
     private final AdresRepository adresRepository;
-    private final KisiMapper kisiMapper;
+    @Autowired // SADECE KENDI SINIFLARINI @RequiredArgsConstructor yap. spring özelliklerini @Autowired yap.
+    public KisiMapper kisiMapper; // DIKKAT ET PRIVATE FINAL YAPINCA HATA ALDIM.
+
     @Override
     @Transactional
     public KisiDto save(KisiDto kisiDto) {
-        Assert.isNull(kisiDto.getAdi(), "Ad alani zorunldur");
 
         Kisi kisi = kisiMapper.toEntity(kisiDto);
         final Kisi kisiDb= kisiRepository.save(kisi);

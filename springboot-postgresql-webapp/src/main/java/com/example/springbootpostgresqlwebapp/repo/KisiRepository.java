@@ -1,6 +1,6 @@
-package repo;
+package com.example.springbootpostgresqlwebapp.repo;
 
-import entity.Kisi;
+import com.example.springbootpostgresqlwebapp.entity.Kisi;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

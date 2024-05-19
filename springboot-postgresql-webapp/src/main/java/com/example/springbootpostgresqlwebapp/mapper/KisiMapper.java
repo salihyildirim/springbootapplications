@@ -1,15 +1,16 @@
-package mapper;
+package com.example.springbootpostgresqlwebapp.mapper;
 
-import dto.KisiDto;
-import entity.Adres;
-import entity.Kisi;
+import com.example.springbootpostgresqlwebapp.dto.KisiDto;
+import com.example.springbootpostgresqlwebapp.entity.Adres;
+import com.example.springbootpostgresqlwebapp.entity.Kisi;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface KisiMapper {
 
     @Mapping(source = "adresler", target = "adresleri")

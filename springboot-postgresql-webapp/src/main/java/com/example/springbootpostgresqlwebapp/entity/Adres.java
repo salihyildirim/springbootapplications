@@ -1,4 +1,4 @@
-package entity;
+package com.example.springbootpostgresqlwebapp.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,7 +22,7 @@ public class Adres implements Serializable {
     private String adres;
     @Enumerated
     private AdresTip adresTip;
-    @Column(name = "adres")
+    @Column(name = "aktif")
     private Boolean aktif;
 
     public enum AdresTip {
