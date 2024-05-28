@@ -11,5 +11,7 @@
         <module>spring-mongo-rest-api</module>
       <module>spring-elasticsearchh</module>
         <module>springboot-events</module>
+        <module>springboot-kafka</module>
+        <module>springboot-jwt</module>
     </modules>
 </project>
