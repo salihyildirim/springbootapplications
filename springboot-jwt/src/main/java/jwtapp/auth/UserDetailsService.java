@@ -13,7 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Service
+@Service //Database'e gider SpringAuthManager için User'i çeker.
+//https://www.youtube.com/watch?v=NO4HR66oVg4&list=PLd0jsEi3hUAdJk49VWxFDRGFBjnrUMK59&index=6
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
     private final Map<String, String> users = new HashMap<>(); //veritabani yerine manuel kullanicilar olusturdum ornek icin
     private final PasswordEncoder passwordEncoder;

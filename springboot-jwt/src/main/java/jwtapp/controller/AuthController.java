@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private TokenManager tokenManager;
+    //Tüm Olay'ın kontrolcüsü AuthenticationManager. Biz tüm security olaylarını ona tanıtırız ve ondan alırız. Hepsini ayarladık(Conf,TokenFilter,UserDetailsService,TokenManager)
     private AuthenticationManager authenticationManager; //WebSecurityConfiguration sınıfında bir instance'ını yaratmadan kullanamazsın.
 
     @PostMapping

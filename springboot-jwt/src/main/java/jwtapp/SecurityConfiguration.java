@@ -24,10 +24,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfiguration {
     //TokenFilter, TokenManager, UserDetaisService arasındaki configleri yap
 
-    private JwtTokenFilter jwtTokenFilter;
-    private UserDetailsService userDetailsService;
+    private final JwtTokenFilter jwtTokenFilter;
+    private final UserDetailsService userDetailsService;
 
-    public SecurityConfiguration(JwtTokenFilter jwtTokenFilter,@Lazy UserDetailsService userDetailsService) {
+    public SecurityConfiguration(JwtTokenFilter jwtTokenFilter, @Lazy UserDetailsService userDetailsService) {
         this.jwtTokenFilter = jwtTokenFilter;
         this.userDetailsService = userDetailsService;
     }
@@ -57,9 +57,10 @@ public class SecurityConfiguration {
         return authenticationConfiguration.getAuthenticationManager();
     }
 
-    public void configurePasswordEncoder(AuthenticationManagerBuilder builder) throws Exception{
-        builder.userDetailsService(userDetailsService).passwordEncoder(getBCryptPasswordEncoder());
-    }
+//
+//    public void configurePasswordEncoder(AuthenticationManagerBuilder builder) throws Exception {
+//        builder.userDetailsService(userDetailsService).passwordEncoder(getBCryptPasswordEncoder());
+//    }
 
 
 }
