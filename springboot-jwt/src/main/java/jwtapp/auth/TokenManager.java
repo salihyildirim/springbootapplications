@@ -18,7 +18,7 @@ public class TokenManager {
         return Jwts.builder()
                 .subject(username)
                 .expiration(new Date(System.currentTimeMillis()))
-                .issuer("www.salih.com")
+                .issuer("salih.com")
                 .issuedAt(new Date(System.currentTimeMillis() + validityTime))
                 .signWith(key)
                 .compact();
@@ -44,6 +44,11 @@ public class TokenManager {
     }
 
     private Claims getClaims(String jwt) {
-        return Jwts.parser().setSigningKey(key).build().parseClaimsJws(jwt).getBody();
+        return Jwts
+                .parser()
+                .verifyWith(key)
+                .build()
+                .parseSignedClaims(jwt)
+                .getPayload();
     }
 }

@@ -45,7 +45,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                 UsernamePasswordAuthenticationToken upassAuthToken = new UsernamePasswordAuthenticationToken(username, null, new ArrayList<>()); //userDetailsService username parametre olarak gönderilir ve user çekilir. authManager yapıyor bu işi.
                 upassAuthToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request)); // istemcinin IP adresi, oturum kimliği gibi durumlarını detay olarak ekle.
 
-                SecurityContextHolder.getContext().setAuthentication(upassAuthToken); //kimlik dogrulamasi tamamlandı, spring contex'e bildir ve ata.
+                SecurityContextHolder.getContext().setAuthentication(upassAuthToken); //kimlik dogrulamasi tamamlandı, spring contex'e bildir ve ata.(authManager artık biliyor olacak)
 
             }
         }
