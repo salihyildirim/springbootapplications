@@ -14,5 +14,6 @@
         <module>springboot-kafka</module>
         <module>springboot-jwt</module>
         <module>springboot-pagination</module>
+        <module>springboot-exception-handling</module>
     </modules>
 </project>
